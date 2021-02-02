@@ -21,9 +21,9 @@ module Fastlane
         end
 
         Bundler.with_clean_env do
-          sh "find #{path}/app/src -name '*.java' -type f -exec sed -i '' 's/#{package_name}/#{new_package_name}/' {} \\;"
-          sh "find #{path}/app/src -name 'AndroidManifest.xml' -type f -exec sed -i '' 's/#{package_name}/#{new_package_name}/' {} \\;"
-          sh "find #{path}/app -name 'build.gradle' -type f -exec sed -i '' 's/#{package_name}/#{new_package_name}/' {} \\;"
+          sh "find #{path}/app/src -name '*.java' -type f -exec sed -i 's/#{package_name}/#{new_package_name}/' {} \\;"
+          sh "find #{path}/app/src -name 'AndroidManifest.xml' -type f -exec sed -i 's/#{package_name}/#{new_package_name}/' {} \\;"
+          sh "find #{path}/app -name 'build.gradle' -type f -exec sed -i 's/#{package_name}/#{new_package_name}/' {} \\;"
         end
       end
 
